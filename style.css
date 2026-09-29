@@ -1,3 +1,23 @@
+/* Old-school pocket calculator look: dark grey page, black screen with
+   glowing aqua digits, pale grey keys. */
+
+/* Segment-style digits for the screen (DSEG, free font, SIL OFL). */
+@font-face {
+  font-family: "DSEG7";
+  src: url("https://cdn.jsdelivr.net/npm/dseg@0.46.0/fonts/DSEG7-Classic/DSEG7Classic-Italic.woff2") format("woff2");
+  font-display: swap;
+}
+
+:root {
+  --page: #3a3a3c;
+  --screen: #070908;
+  --screen-edge: #1c1d1e;
+  --glow: #5ff3de;
+  --key: #dcdcd6;
+  --key-shadow: #9d9d97;
+  --key-text: #1e1e1e;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -9,9 +29,9 @@ body {
   justify-content: center;
   align-items: flex-start;
   padding: 24px 16px;
-  background: #f6f5f2;
-  color: #2b2b2b;
-  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  background: var(--page);
+  color: var(--key-text);
+  font-family: "Michroma", "Eurostile", "Arial Black", sans-serif;
 }
 
 .calculator {
@@ -24,24 +44,30 @@ body {
   position: relative;
   display: flex;
   justify-content: flex-end;
-  align-items: flex-end;
+  align-items: center;
   min-height: 96px;
-  padding: 16px;
-  border: 2px solid #ddd9d0;
-  border-radius: 16px;
-  background: #fff;
+  padding: 16px 18px;
+  border: 6px solid var(--screen-edge);
+  border-radius: 10px;
+  background: var(--screen);
+  box-shadow: inset 0 3px 12px rgba(0, 0, 0, 0.9);
   cursor: text;
 }
 
 .display:focus-within {
-  border-color: #9bb8a2;
+  border-color: #26302f;
 }
 
 .display-text {
-  font-size: 2rem;
+  font-family: "DSEG7", "Courier New", monospace;
+  font-size: 1.9rem;
+  letter-spacing: 0.04em;
   text-align: right;
   overflow-wrap: anywhere;
-  font-variant-numeric: tabular-nums;
+  color: var(--glow);
+  text-shadow:
+    0 0 4px rgba(95, 243, 222, 0.8),
+    0 0 12px rgba(95, 243, 222, 0.45);
 }
 
 /* Covers the whole display so a tap anywhere on it focuses the input. */
@@ -64,31 +90,44 @@ body {
   margin-top: 14px;
 }
 
+/* Chunky plastic keycaps with a darker lip underneath. */
 .key {
   padding: 18px 0;
   border: 0;
-  border-radius: 14px;
-  font-size: 1.5rem;
+  border-radius: 10px;
+  background: var(--key);
+  color: var(--key-text);
+  box-shadow:
+    inset 0 2px 0 rgba(255, 255, 255, 0.7),
+    0 4px 0 var(--key-shadow),
+    0 6px 8px rgba(0, 0, 0, 0.35);
+  font-size: 1.4rem;
   font-family: inherit;
   cursor: pointer;
   touch-action: manipulation;
 }
 
-.key-op {
-  background: #e7e4dc;
-  color: #2b2b2b;
-}
-
+/* Orange AC key, like the Casio. */
 .key-clear {
-  background: #f1d9d4;
-  color: #2b2b2b;
-}
-
-.key-equals {
-  background: #9bb8a2;
+  background: #e8732c;
   color: #fff;
+  box-shadow:
+    inset 0 2px 0 rgba(255, 255, 255, 0.35),
+    0 4px 0 #a84c16,
+    0 6px 8px rgba(0, 0, 0, 0.35);
 }
 
 .key:active {
-  filter: brightness(0.93);
+  transform: translateY(3px);
+  box-shadow:
+    inset 0 2px 0 rgba(255, 255, 255, 0.5),
+    0 1px 0 var(--key-shadow),
+    0 2px 4px rgba(0, 0, 0, 0.35);
+}
+
+.key-clear:active {
+  box-shadow:
+    inset 0 2px 0 rgba(255, 255, 255, 0.25),
+    0 1px 0 #a84c16,
+    0 2px 4px rgba(0, 0, 0, 0.35);
 }
