@@ -190,7 +190,7 @@ body {
 }
 
 .welcome a {
-  color: inherit;
+  color: var(--glow);
 }
 
 .legend {
