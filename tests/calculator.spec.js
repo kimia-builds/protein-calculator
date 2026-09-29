@@ -241,7 +241,7 @@ test.describe("4.5 welcome text and key", () => {
     await expect(page.locator(".welcome p")).toHaveText([
       "welcome to kimia's protein calculator.",
       "this regular calculator works to 1 decimal point and follows bidmas rules.",
-      "to calculate your daily protein, press the food buttons. note: these foods correspond to exact protein values of specific (mostly vegan) brands of food that kimia eats. if you want it to include your go-to foods, use my github repo to build a copy.",
+      "to calculate your daily protein, press the food buttons. note: these foods correspond to exact protein values of specific (mostly vegan) brands of food that kimia eats. if you want it to include your go-to foods, use my github repo to build your own version.",
     ]);
   });
   test("\"github repo\" links to the repository", async ({ page }) => {

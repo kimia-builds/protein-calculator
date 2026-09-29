@@ -82,7 +82,7 @@ Primary user: the author, tracking protein on a mostly plant-based diet. Seconda
 - It reads, as three paragraphs:
   1. "welcome to kimia's protein calculator."
   2. "this regular calculator works to 1 decimal point and follows bidmas rules."
-  3. "to calculate your daily protein, press the food buttons. note: these foods correspond to exact protein values of specific (mostly vegan) brands of food that kimia eats. if you want it to include your go-to foods, use my github repo to build a copy."
+  3. "to calculate your daily protein, press the food buttons. note: these foods correspond to exact protein values of specific (mostly vegan) brands of food that kimia eats. if you want it to include your go-to foods, use my github repo to build your own version."
 - The words "github repo" link to https://github.com/kimia-builds/protein-calculator.
 - Underneath the welcome text (still at the side on a laptop) is the key: a small swatch of each category colour with its meaning ("1 tbsp", "1 unit", "misc").
 - All text in this block is lower case, and so are the food button names.
