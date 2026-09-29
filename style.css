@@ -1,0 +1,94 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 24px 16px;
+  background: #f6f5f2;
+  color: #2b2b2b;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+.calculator {
+  width: 100%;
+  max-width: 360px;
+}
+
+/* The number screen. */
+.display {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  min-height: 96px;
+  padding: 16px;
+  border: 2px solid #ddd9d0;
+  border-radius: 16px;
+  background: #fff;
+  cursor: text;
+}
+
+.display:focus-within {
+  border-color: #9bb8a2;
+}
+
+.display-text {
+  font-size: 2rem;
+  text-align: right;
+  overflow-wrap: anywhere;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Covers the whole display so a tap anywhere on it focuses the input. */
+.number-input {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  border: 0;
+  font-size: 16px; /* stops iPhones zooming in on focus */
+  caret-color: transparent;
+  cursor: text;
+}
+
+.keys {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.key {
+  padding: 18px 0;
+  border: 0;
+  border-radius: 14px;
+  font-size: 1.5rem;
+  font-family: inherit;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.key-op {
+  background: #e7e4dc;
+  color: #2b2b2b;
+}
+
+.key-clear {
+  background: #f1d9d4;
+  color: #2b2b2b;
+}
+
+.key-equals {
+  background: #9bb8a2;
+  color: #fff;
+}
+
+.key:active {
+  filter: brightness(0.93);
+}

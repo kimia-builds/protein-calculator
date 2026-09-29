@@ -25,11 +25,24 @@ Primary user: the author, tracking protein on a mostly plant-based diet. Seconda
 - Any other character is ignored as if never pressed.
 - Keyboard input never triggers functions: operators, `=`, `AC`, and Enter are usable only by clicking their buttons.
 - Decimals are supported.
+- On a phone, tapping the display opens the phone's number keypad.
+- Backspace/Delete removes the last digit or `.` of the number being typed. It never removes an operator.
 
-### 3.3 Evaluation
+### 3.3 Operators
+- An operator pressed before any number is typed is ignored.
+- An operator pressed straight after another operator replaces it.
+
+### 3.4 Evaluation
 - Expressions follow BIDMAS (multiplication/division before addition/subtraction).
 - Nothing is evaluated or shown as a result until `=` is pressed. Before that, the display shows only what has been entered.
+- `=` straight after an operator ignores that trailing operator.
+- Results are rounded to at most 1 decimal place.
+- Dividing by zero shows `Error`.
 - `AC` clears the display and any pending expression.
+
+### 3.5 After a result
+- Pressing an operator continues the sum from the result.
+- Typing a digit starts a new sum.
 
 ## 4. Food buttons
 
@@ -77,4 +90,3 @@ Primary user: the author, tracking protein on a mostly plant-based diet. Seconda
 
 - Starter food list (names, grams of protein, section) to be supplied by the author.
 - Exact 7 pastel colours to be chosen when the food sections are built.
-- Behaviour of Backspace/Delete while typing a number is unspecified.

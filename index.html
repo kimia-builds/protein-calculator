@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Protein Calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="calculator">
+    <label class="display" for="number-input">
+      <span class="display-text" id="display-text" aria-live="polite"></span>
+      <!-- Invisible input over the display: it receives typing, and on a
+           phone tapping the display opens the number keypad. -->
+      <input id="number-input" class="number-input" type="text"
+             inputmode="decimal" autocomplete="off" autocorrect="off"
+             spellcheck="false" aria-label="Type a number" autofocus>
+    </label>
+
+    <div class="keys">
+      <button type="button" class="key key-clear" data-action="clear">AC</button>
+      <button type="button" class="key key-op" data-op="/" aria-label="divide">÷</button>
+      <button type="button" class="key key-op" data-op="*" aria-label="multiply">×</button>
+      <button type="button" class="key key-op" data-op="-" aria-label="minus">−</button>
+      <button type="button" class="key key-op" data-op="+" aria-label="plus">+</button>
+      <button type="button" class="key key-equals" data-action="equals">=</button>
+    </div>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
