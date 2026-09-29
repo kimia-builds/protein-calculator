@@ -19,3 +19,7 @@ MVP achieved: the calculator and the food buttons work. Adding, deleting and res
 ## Hosting
 
 Static site on GitHub Pages. No backend.
+
+## Tests
+
+`npm test` opens the page in a real browser and checks the calculator's behaviour against SPEC.md and the layout on phone and laptop sizes. It runs automatically before each commit and on every push to GitHub. First-time setup on a new machine: `npm install`, `npx playwright install chromium`, `git config core.hooksPath .githooks`.

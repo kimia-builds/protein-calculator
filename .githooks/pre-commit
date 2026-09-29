@@ -1,0 +1,4 @@
+#!/bin/sh
+# Runs the test suite before every commit. A failing test blocks the commit.
+echo "Running tests before commit..."
+npm test --silent || { echo; echo "Tests failed - commit blocked. Fix the failures above first."; exit 1; }
