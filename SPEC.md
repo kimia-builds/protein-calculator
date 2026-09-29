@@ -64,9 +64,9 @@ Primary user: the author, tracking protein on a mostly plant-based diet. Seconda
   - **Baby pink**: 1 tablespoon.
   - **Mint green**: 1 unit.
   - **Lilac**: miscellaneous.
-- Categories are distinguished by colour only; they have no names on the page.
+- Categories have no names on the food buttons themselves; they are distinguished by colour. The side text (section 4.5) has a key explaining what each colour means.
 - Categories are separated by a divider line.
-- A key at the bottom of this document lists the category-to-colour system.
+- The key at the bottom of this document lists the category-to-colour system.
 
 ### 4.3 Creating (*Nice to have*)
 - Each category has a "create new..." button.
@@ -76,6 +76,12 @@ Primary user: the author, tracking protein on a mostly plant-based diet. Seconda
 ### 4.4 Deleting (*Nice to have*)
 - Any button, including default ones, can be deleted.
 - Buttons cannot be edited. To change one, delete and recreate it.
+
+### 4.5 Welcome text and key
+- A block of text sits beside the calculator: to its left on a laptop, below it on a phone.
+- It opens with: "welcome to kimia's protein calculator. most of these foods correspond to exact values of specific (mostly vegan) brands of food that kimia eats."
+- Underneath the welcome text (still at the side on a laptop) is the key: a small swatch of each category colour with its meaning ("1 tablespoon", "1 unit", "miscellaneous").
+- All text in this block is lower case.
 
 ## 5. Default list and persistence
 
@@ -95,7 +101,7 @@ Primary user: the author, tracking protein on a mostly plant-based diet. Seconda
 
 - Editing existing buttons.
 - Cross-device sync, accounts, or a backend.
-- Naming categories on the page.
+- Naming categories on the food buttons themselves (the key in 4.5 is the only place they are explained).
 - Daily logs, history, or targets.
 
 ## 8. Open items

@@ -26,8 +26,9 @@ body {
   margin: 0;
   min-height: 100vh;
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
   padding: 24px 16px;
   background: var(--page);
   color: var(--key-text);
@@ -164,4 +165,57 @@ body {
     inset 0 2px 0 rgba(255, 255, 255, 0.25),
     0 1px 0 #a84c16,
     0 2px 4px rgba(0, 0, 0, 0.35);
+}
+
+/* Welcome text and colour key: below the calculator on a phone, to its
+   left on a laptop. */
+.about {
+  width: 100%;
+  max-width: 360px;
+  color: #dcdcd6;
+  font-size: 0.72rem;
+  line-height: 1.8;
+}
+
+.welcome {
+  margin: 0 0 20px;
+}
+
+.legend {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.legend li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.swatch {
+  flex: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+}
+
+.swatch-pink { background: #f6cfda; }
+.swatch-mint { background: #cfe8d6; }
+.swatch-lilac { background: #ddd2f2; }
+
+@media (min-width: 900px) {
+  body {
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 56px;
+  }
+
+  .about {
+    order: -1;
+    max-width: 280px;
+    margin-top: 8px;
+  }
 }
