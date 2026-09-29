@@ -278,12 +278,15 @@ test.describe("4.5 welcome text and key", () => {
 });
 
 test.describe("FOODS.md matches the food buttons", () => {
-  test("every button and its grams are listed in FOODS.md, and nothing extra", async ({ page }) => {
+  test("every button and its grams are listed in FOODS.md, and nothing extra (except rows marked not on a button yet)", async ({ page }) => {
     const buttons = await page.locator(".food").evaluateAll((els) =>
       els.map((e) => [e.textContent.trim(), Number(e.dataset.grams)])
     );
     const doc = fs.readFileSync(path.resolve(__dirname, "..", "FOODS.md"), "utf8");
-    const rows = [...doc.matchAll(/^\| (.+?) \| (\d+(?:\.\d+)?) \|/gm)].map((m) => [m[1], Number(m[2])]);
+    // Rows marked "Not on a button yet" are documented ahead of being built.
+    const rows = [...doc.matchAll(/^\| (.+?) \| (\d+(?:\.\d+)?) \|(.*)$/gm)]
+      .filter((m) => !m[3].includes("Not on a button yet"))
+      .map((m) => [m[1], Number(m[2])]);
     expect(rows).toEqual(buttons);
   });
 });

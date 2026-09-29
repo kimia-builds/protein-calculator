@@ -19,6 +19,8 @@ Cells marked *to fill in* have not been written down yet.
 
 When a food is added, removed, or has its protein figure changed, update **both** this file and `FOOD_CATEGORIES` in `app.js` in the same change. `npm test` fails if a food or its grams differ between the two.
 
+A row whose notes start with *Not on a button yet* is documented here but not in the app. The test ignores those rows. When the button is added to `app.js`, remove that note.
+
 Protein figures are per press, to 1 decimal place, matching the calculator.
 
 ## Baby pink: 1 tbsp
@@ -47,6 +49,8 @@ Protein figures are per press, to 1 decimal place, matching the calculator.
 | sardines | 17.0 | *to fill in (1 tin, weight)* | *to fill in* | *to fill in* |
 | egg | 6.3 | *to fill in (1 egg, size)* | *to fill in* | *to fill in* |
 | cheese | 5.0 | *to fill in (1 slice or portion, weight)* | *to fill in* | *to fill in* |
+| oreo ice cream sandwich | 3.4 | 1 ice cream sandwich | Oreo *(to confirm)* | *Not on a button yet.* |
+| richmond quarter pounder burger | 20.0 | 1 quarter pounder burger | Richmond *(to confirm)* | *Not on a button yet.* *(to confirm: cooked or raw weight)* |
 
 ## Lilac: misc
 
@@ -60,6 +64,7 @@ Things that are not a tablespoon or a single unit: a serving, a bowl, half a tin
 | ryvita slice | 0.9 | 1 slice of Ryvita *(variety to confirm)* | Ryvita *(variety to confirm)* | *to fill in* |
 | bowl tagliatelle | 9.0 | 1 bowl tagliatelle *(bowl size, dry or cooked weight)* | *to fill in* | *to fill in* |
 | bowl rice | 4.0 | 1 bowl rice *(bowl size, dry or cooked weight)* | *to fill in* | *to fill in* |
+| maggi instant noodles | 6.0 | 1 packet of instant noodles | Maggi *(variety to confirm)* | *Not on a button yet.* Whole packet, *(to confirm: with or without the flavour sachet)* |
 
 ## Foods waiting to be added
 
