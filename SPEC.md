@@ -2,7 +2,7 @@
 
 ## 0. Status
 
-**MVP achieved.** The MVP is the calculator (section 3) plus a hard-coded list of food buttons (section 4.1), all in a single section (the categories in 4.2 are not yet applied). It works on desktop and phone.
+**MVP achieved.** The MVP is the calculator (section 3) plus a hard-coded list of food buttons (section 4.1), grouped into the three colour-coded categories in 4.2. It works on desktop and phone.
 
 Everything marked *Nice to have* below is optional and may never be built.
 
@@ -100,7 +100,6 @@ Primary user: the author, tracking protein on a mostly plant-based diet. Seconda
 
 ## 8. Open items
 
-- Which foods go in which category, to be chosen when the categories are applied.
 - More foods to add to the default list (e.g. Linda sausage), once the author supplies their protein amounts.
 
 ## Key: categories and colours

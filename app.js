@@ -174,18 +174,45 @@ function render() {
 
 // ---------- Food buttons (SPEC.md section 4) ----------
 
-// The default food list: name and grams of protein. All in one section
-// for now; sections come later.
-const FOODS = [
-  { name: "Alpro yoghurt", grams: 6.3 },
-  { name: "Hemp seed", grams: 3.2 },
-  { name: "Soya latte", grams: 15.0 },
-  { name: "Cashews", grams: 5.1 },
-  { name: "Kidney beans", grams: 8.4 },
-  { name: "Egg", grams: 6.3 },
-  { name: "Pumpkin seeds", grams: 2.7 },
-  { name: "Cheddar", grams: 5.0 },
-  { name: "Hummus", grams: 1.2 },
+// The default food list: three categories by measurement (SPEC.md 4.2).
+// Each food has a name and grams of protein per press.
+const FOOD_CATEGORIES = [
+  {
+    colour: "pink", // 1 tablespoon
+    foods: [
+      { name: "Yoghurt", grams: 0.6 },
+      { name: "Hemp seed", grams: 3.2 },
+      { name: "Cashews", grams: 1.6 },
+      { name: "Almonds", grams: 1.8 },
+      { name: "Pistachios", grams: 1.0 },
+      { name: "Pumpkin seeds", grams: 2.7 },
+      { name: "Hummus", grams: 1.2 },
+    ],
+  },
+  {
+    colour: "mint", // 1 unit
+    foods: [
+      { name: "Pastrami", grams: 1.5 },
+      { name: "Pepperoni", grams: 0.8 },
+      { name: "Sausage", grams: 5.0 },
+      { name: "Burger", grams: 12.0 },
+      { name: "Mackerel", grams: 17.0 },
+      { name: "Sardines", grams: 17.0 },
+      { name: "Egg", grams: 6.3 },
+      { name: "Cheese", grams: 5.0 },
+    ],
+  },
+  {
+    colour: "lilac", // miscellaneous
+    foods: [
+      { name: "Soya latte", grams: 15.0 },
+      { name: "Half-tin beans", grams: 8.4 },
+      { name: "Jerky pack", grams: 8.0 },
+      { name: "Ryvita slice", grams: 0.9 },
+      { name: "Bowl tagliatelle", grams: 9.0 },
+      { name: "Bowl rice", grams: 4.0 },
+    ],
+  },
 ];
 
 // Enters a food's grams into the sum, adding "+" first if needed.
@@ -205,13 +232,18 @@ function pressFood(grams) {
 }
 
 const foodsBox = document.getElementById("foods");
-for (const food of FOODS) {
-  const button = document.createElement("button");
-  button.type = "button";
-  button.className = "key food";
-  button.textContent = food.name;
-  button.dataset.grams = food.grams;
-  foodsBox.appendChild(button);
+for (const category of FOOD_CATEGORIES) {
+  const section = document.createElement("div");
+  section.className = "food-group food-" + category.colour;
+  for (const food of category.foods) {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "key food";
+    button.textContent = food.name;
+    button.dataset.grams = food.grams;
+    section.appendChild(button);
+  }
+  foodsBox.appendChild(section);
 }
 
 // Buttons must not take focus away from the input, so the phone keypad
