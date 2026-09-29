@@ -2,7 +2,7 @@
 
 ## 0. Status
 
-**MVP achieved.** The MVP is the calculator (section 3) plus a hard-coded list of food buttons (section 4.1), all in a single section. It works on desktop and phone.
+**MVP achieved.** The MVP is the calculator (section 3) plus a hard-coded list of food buttons (section 4.1), all in a single section (the categories in 4.2 are not yet applied). It works on desktop and phone.
 
 Everything marked *Nice to have* below is optional and may never be built.
 
@@ -58,16 +58,20 @@ Primary user: the author, tracking protein on a mostly plant-based diet. Seconda
 - If the calculator already contains a number or expression, `+` is applied before the amount. If the last entry is an operator, that operator is used instead.
 - If a result is showing after `=`, pressing a food button starts a new sum with that amount.
 
-### 4.2 Sections
-- MVP: all buttons are in one section, in one soft pastel colour, below a divider line.
-- Planned refinement: split the buttons into more sections (up to 7).
-  - Sections are distinguished by soft pastel colours only; they have no names.
-  - Sections are separated by a divider line.
+### 4.2 Categories
+- Buttons are grouped into categories by **measurement**: what one press of the button's protein amount refers to.
+- There are three categories, each shown in its own soft pastel colour:
+  - **Baby pink**: 1 tablespoon.
+  - **Mint green**: 1 unit.
+  - **Lilac**: miscellaneous.
+- Categories are distinguished by colour only; they have no names on the page.
+- Categories are separated by a divider line.
+- A key at the bottom of this document lists the category-to-colour system.
 
 ### 4.3 Creating (*Nice to have*)
-- Each section has a "create new..." button.
+- Each category has a "create new..." button.
 - "Create new..." prompts for a food name and protein amount.
-- The new button is added to that section.
+- The new button is added to that category.
 
 ### 4.4 Deleting (*Nice to have*)
 - Any button, including default ones, can be deleted.
@@ -75,7 +79,7 @@ Primary user: the author, tracking protein on a mostly plant-based diet. Seconda
 
 ## 5. Default list and persistence
 
-- The default food list (names, protein amounts, sections) is hard-coded in the source. It is the source of truth.
+- The default food list (names, protein amounts, categories) is hard-coded in the source. It is the source of truth.
 - Changes to the default list are made in the source code, not through the page.
 - *Nice to have* (only needed if 4.3 or 4.4 is built): user customisations (created and deleted buttons) are stored in the browser (`localStorage`) on that device. They do not sync across devices.
 
@@ -91,10 +95,18 @@ Primary user: the author, tracking protein on a mostly plant-based diet. Seconda
 
 - Editing existing buttons.
 - Cross-device sync, accounts, or a backend.
-- Naming sections.
+- Naming categories on the page.
 - Daily logs, history, or targets.
 
 ## 8. Open items
 
-- Which foods go in which section, and the pastel colour for each, to be chosen when sections are split.
+- Which foods go in which category, to be chosen when the categories are applied.
 - More foods to add to the default list (e.g. Linda sausage), once the author supplies their protein amounts.
+
+## Key: categories and colours
+
+| Colour | Category |
+|---|---|
+| Baby pink | 1 tablespoon |
+| Mint green | 1 unit |
+| Lilac | Miscellaneous |
