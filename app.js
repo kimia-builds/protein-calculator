@@ -178,39 +178,39 @@ function render() {
 // Each food has a name and grams of protein per press.
 const FOOD_CATEGORIES = [
   {
-    colour: "pink", // 1 tablespoon
+    colour: "pink", // 1 tbsp
     foods: [
-      { name: "Yoghurt", grams: 0.6 },
-      { name: "Hemp seed", grams: 3.2 },
-      { name: "Cashews", grams: 1.6 },
-      { name: "Almonds", grams: 1.8 },
-      { name: "Pistachios", grams: 1.0 },
-      { name: "Pumpkin seeds", grams: 2.7 },
-      { name: "Hummus", grams: 1.2 },
+      { name: "yoghurt", grams: 0.6 },
+      { name: "hemp seed", grams: 3.2 },
+      { name: "cashews", grams: 1.6 },
+      { name: "almonds", grams: 1.8 },
+      { name: "pistachios", grams: 1.0 },
+      { name: "pumpkin seeds", grams: 2.7 },
+      { name: "hummus", grams: 1.2 },
     ],
   },
   {
     colour: "mint", // 1 unit
     foods: [
-      { name: "Pastrami", grams: 1.5 },
-      { name: "Pepperoni", grams: 0.8 },
-      { name: "Sausage", grams: 5.0 },
-      { name: "Burger", grams: 12.0 },
-      { name: "Mackerel", grams: 17.0 },
-      { name: "Sardines", grams: 17.0 },
-      { name: "Egg", grams: 6.3 },
-      { name: "Cheese", grams: 5.0 },
+      { name: "pastrami", grams: 1.5 },
+      { name: "pepperoni", grams: 0.8 },
+      { name: "sausage", grams: 5.0 },
+      { name: "burger", grams: 12.0 },
+      { name: "mackerel", grams: 17.0 },
+      { name: "sardines", grams: 17.0 },
+      { name: "egg", grams: 6.3 },
+      { name: "cheese", grams: 5.0 },
     ],
   },
   {
-    colour: "lilac", // miscellaneous
+    colour: "lilac", // misc
     foods: [
-      { name: "Soya latte", grams: 15.0 },
-      { name: "Half-tin beans", grams: 8.4 },
-      { name: "Jerky pack", grams: 8.0 },
-      { name: "Ryvita slice", grams: 0.9 },
-      { name: "Bowl tagliatelle", grams: 9.0 },
-      { name: "Bowl rice", grams: 4.0 },
+      { name: "soya latte", grams: 15.0 },
+      { name: "half-tin beans", grams: 8.4 },
+      { name: "jerky pack", grams: 8.0 },
+      { name: "ryvita slice", grams: 0.9 },
+      { name: "bowl tagliatelle", grams: 9.0 },
+      { name: "bowl rice", grams: 4.0 },
     ],
   },
 ];

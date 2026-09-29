@@ -10,7 +10,7 @@ The author follows a mostly plant-based diet where reaching a protein target is 
 
 - A basic calculator (+, −, ×, ÷, =, AC). Numbers are typed; there are no number buttons.
 - Food buttons sit below the calculator. Tapping one enters that food's protein grams into the calculator.
-- The food list is hard-coded in the source. Foods are grouped into colour-coded categories by measurement: baby pink is 1 tablespoon, mint green is 1 unit, and lilac is miscellaneous.
+- The food list is hard-coded in the source. Foods are grouped into colour-coded categories by measurement: baby pink is 1 tbsp, mint green is 1 unit, and lilac is misc.
 
 ## Status
 

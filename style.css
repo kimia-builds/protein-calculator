@@ -181,6 +181,18 @@ body {
   margin: 0 0 20px;
 }
 
+.welcome p {
+  margin: 0 0 1em;
+}
+
+.welcome p:last-child {
+  margin-bottom: 0;
+}
+
+.welcome a {
+  color: inherit;
+}
+
 .legend {
   list-style: none;
   margin: 0;

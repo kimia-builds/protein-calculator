@@ -169,36 +169,36 @@ test.describe("3.5 after a result", () => {
 
 test.describe("4.1 food buttons", () => {
   test("pressing a food enters its protein grams", async () => {
-    await c.food("Egg").click();
+    await c.food("egg").click();
     expect(await shown(c)).toBe("6.3");
   });
   test("a second food adds with + automatically", async () => {
-    await c.food("Egg").click();
-    await c.food("Cheese").click();
+    await c.food("egg").click();
+    await c.food("cheese").click();
     expect(await shown(c)).toBe("6.3 + 5");
     await c.key("=").click();
     expect(await shown(c)).toBe("11.3");
   });
   test("if the last entry is an operator, that operator is used", async () => {
-    await c.food("Egg").click();
+    await c.food("egg").click();
     await c.key("multiply").click();
-    await c.food("Burger").click();
+    await c.food("burger").click();
     expect(await shown(c)).toBe("6.3 × 12");
   });
   test("typed number then a food adds with +", async () => {
     await c.type("2");
-    await c.food("Egg").click();
+    await c.food("egg").click();
     expect(await shown(c)).toBe("2 + 6.3");
   });
   test("after = a food starts a new sum", async () => {
-    await c.food("Egg").click();
-    await c.food("Egg").click();
+    await c.food("egg").click();
+    await c.food("egg").click();
     await c.key("=").click();
-    await c.food("Burger").click();
+    await c.food("burger").click();
     expect(await shown(c)).toBe("12");
   });
   test("clicking buttons keeps the keyboard input focused", async ({ page }) => {
-    await c.food("Egg").click();
+    await c.food("egg").click();
     await expect(c.input).toBeFocused();
   });
 });
@@ -238,15 +238,28 @@ test.describe("4.2 categories and 5 default list", () => {
 
 test.describe("4.5 welcome text and key", () => {
   test("welcome text is present and exact", async ({ page }) => {
-    await expect(page.locator(".welcome")).toHaveText(
-      "welcome to kimia's protein calculator. most of these foods correspond to exact values of specific (mostly vegan) brands of food that kimia eats."
+    await expect(page.locator(".welcome p")).toHaveText([
+      "welcome to kimia's protein calculator.",
+      "this regular calculator works to 1 decimal point and follows bidmas rules.",
+      "to calculate your daily protein, press the food buttons. note: these foods correspond to exact protein values of specific (mostly vegan) brands of food that kimia eats. if you want it to include your go-to foods, use my github repo to build a copy.",
+    ]);
+  });
+  test("\"github repo\" links to the repository", async ({ page }) => {
+    await expect(page.locator(".welcome a")).toHaveText("github repo");
+    await expect(page.locator(".welcome a")).toHaveAttribute(
+      "href",
+      "https://github.com/kimia-builds/protein-calculator"
     );
+  });
+  test("food buttons are all lower case", async ({ page }) => {
+    const names = await page.locator(".food").allTextContents();
+    for (const n of names) expect(n).toBe(n.toLowerCase());
   });
   test("key lists the three meanings", async ({ page }) => {
     await expect(page.locator(".legend li")).toHaveText([
-      "1 tablespoon",
+      "1 tbsp",
       "1 unit",
-      "miscellaneous",
+      "misc",
     ]);
   });
   test("all text in the block is lower case", async ({ page }) => {
