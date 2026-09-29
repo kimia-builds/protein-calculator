@@ -1,5 +1,11 @@
 # Specification
 
+## 0. Status
+
+**MVP achieved.** The MVP is the calculator (section 3) plus a hard-coded list of food buttons (section 4.1), all in a single section. It works on desktop and phone.
+
+Everything marked *Nice to have* below is optional and may never be built.
+
 ## 1. Purpose and user
 
 Primary user: the author, tracking protein on a mostly plant-based diet. Secondary: anyone else using the page, who may customise it.
@@ -53,27 +59,29 @@ Primary user: the author, tracking protein on a mostly plant-based diet. Seconda
 - If a result is showing after `=`, pressing a food button starts a new sum with that amount.
 
 ### 4.2 Sections
-- Buttons are grouped into 7 sections.
-- Sections are distinguished by soft pastel colours only; they have no names.
-- Sections are separated by a divider line.
-- Each section has a "create new..." button.
+- MVP: all buttons are in one section, in one soft pastel colour, below a divider line.
+- Planned refinement: split the buttons into more sections (up to 7).
+  - Sections are distinguished by soft pastel colours only; they have no names.
+  - Sections are separated by a divider line.
 
-### 4.3 Creating
+### 4.3 Creating (*Nice to have*)
+- Each section has a "create new..." button.
 - "Create new..." prompts for a food name and protein amount.
 - The new button is added to that section.
 
-### 4.4 Deleting
+### 4.4 Deleting (*Nice to have*)
 - Any button, including default ones, can be deleted.
 - Buttons cannot be edited. To change one, delete and recreate it.
 
 ## 5. Default list and persistence
 
 - The default food list (names, protein amounts, sections) is hard-coded in the source. It is the source of truth.
-- User customisations (created and deleted buttons) are stored in the browser (`localStorage`) on that device. They do not sync across devices.
 - Changes to the default list are made in the source code, not through the page.
+- *Nice to have* (only needed if 4.3 or 4.4 is built): user customisations (created and deleted buttons) are stored in the browser (`localStorage`) on that device. They do not sync across devices.
 
-## 6. Reset to default
+## 6. Reset to default (*Nice to have*)
 
+- Only needed if 4.3 or 4.4 is built.
 - A "Refresh to default" button at the bottom of the page.
 - Pressing it opens a confirmation popup stating that all customisations will be lost permanently.
 - On confirm: stored customisations are erased and the page returns to the hard-coded default.
@@ -88,5 +96,5 @@ Primary user: the author, tracking protein on a mostly plant-based diet. Seconda
 
 ## 8. Open items
 
-- Starter food list (names, grams of protein, section) to be supplied by the author.
-- Exact 7 pastel colours to be chosen when the food sections are built.
+- Which foods go in which section, and the pastel colour for each, to be chosen when sections are split.
+- More foods to add to the default list (e.g. Linda sausage), once the author supplies their protein amounts.

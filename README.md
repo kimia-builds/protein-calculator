@@ -10,12 +10,11 @@ The author follows a mostly plant-based diet where reaching a protein target is 
 
 - A basic calculator (+, −, ×, ÷, =, AC). Numbers are typed; there are no number buttons.
 - Food buttons sit below the calculator. Tapping one enters that food's protein grams into the calculator.
-- Foods are grouped into 7 colour-coded sections. Users can add and delete foods.
-- A default food list is hard-coded in the source. Customisations are stored in the browser and can be reset to the default.
+- The food list is hard-coded in the source. For now all foods sit in one colour-coded section.
 
 ## Status
 
-Preliminary. See [SPEC.md](SPEC.md) for the specification.
+MVP achieved: the calculator and the food buttons work. Adding, deleting and resetting foods from the page are nice-to-haves that may never be built. See [SPEC.md](SPEC.md) for the specification.
 
 ## Hosting
 
