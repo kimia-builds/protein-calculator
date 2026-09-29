@@ -1,4 +1,6 @@
 // Behaviour tests. Each group is named after the SPEC.md section it checks.
+const fs = require("fs");
+const path = require("path");
 const { test } = require("@playwright/test");
 const { openCalc, shown, expect } = require("./helpers");
 
@@ -272,5 +274,16 @@ test.describe("4.5 welcome text and key", () => {
     expect(await bg(".swatch-pink")).toBe(await bg(".food-pink .food"));
     expect(await bg(".swatch-mint")).toBe(await bg(".food-mint .food"));
     expect(await bg(".swatch-lilac")).toBe(await bg(".food-lilac .food"));
+  });
+});
+
+test.describe("FOODS.md matches the food buttons", () => {
+  test("every button and its grams are listed in FOODS.md, and nothing extra", async ({ page }) => {
+    const buttons = await page.locator(".food").evaluateAll((els) =>
+      els.map((e) => [e.textContent.trim(), Number(e.dataset.grams)])
+    );
+    const doc = fs.readFileSync(path.resolve(__dirname, "..", "FOODS.md"), "utf8");
+    const rows = [...doc.matchAll(/^\| (.+?) \| (\d+(?:\.\d+)?) \|/gm)].map((m) => [m[1], Number(m[2])]);
+    expect(rows).toEqual(buttons);
   });
 });

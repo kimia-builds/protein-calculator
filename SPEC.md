@@ -90,7 +90,7 @@ Primary user: the author, tracking protein on a mostly plant-based diet. Seconda
 
 ## 5. Default list and persistence
 
-- The default food list (names, protein amounts, categories) is hard-coded in the source. It is the source of truth.
+- The default food list (names, protein amounts, categories) is hard-coded in the source. It is the source of truth for what the buttons do. [FOODS.md](FOODS.md) documents what each figure means (exact food, amount, brand, assumptions) and must be kept in step with it; a test checks the names and grams match.
 - Changes to the default list are made in the source code, not through the page.
 - *Nice to have* (only needed if 4.3 or 4.4 is built): user customisations (created and deleted buttons) are stored in the browser (`localStorage`) on that device. They do not sync across devices.
 
