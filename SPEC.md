@@ -24,7 +24,7 @@ Primary user: the author, tracking protein on a mostly plant-based diet. Seconda
 - A `.` is accepted once per number. A second `.` in the same number is ignored as if never pressed.
 - Any other character is ignored as if never pressed.
 - Keyboard input never triggers functions: operators, `=`, `AC`, and Enter are usable only by clicking their buttons.
-- Decimals are supported.
+- Decimals are supported, but typing stops at 1 digit after the point (4.444 shows as 4.4).
 - On a phone, tapping the display opens the phone's number keypad.
 - Backspace/Delete removes the last digit or `.` of the number being typed. It never removes an operator.
 

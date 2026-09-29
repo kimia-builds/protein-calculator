@@ -2,7 +2,7 @@
 //
 // How it holds its state:
 //   tokens       finished parts of the sum, e.g. ["12", "+", "3.5", "*"]
-//   input.value  the number currently being typed (digits and one ".")
+//   input.value  the number currently being typed (digits, one ".", max 1 decimal)
 //   result       the answer shown after "=", or null
 
 const input = document.getElementById("number-input");
@@ -16,13 +16,18 @@ let showingError = false;
 
 // ---------- Typing ----------
 
-// Keeps only digits and the first ".". Anything else is dropped as if
-// never pressed.
+// Keeps only digits and the first ".", with at most 1 digit after the ".".
+// Anything else is dropped as if never pressed.
 function cleanNumber(text) {
   let cleaned = "";
   let hasDot = false;
+  let decimals = 0;
   for (const ch of text) {
     if (ch >= "0" && ch <= "9") {
+      if (hasDot) {
+        if (decimals >= 1) continue;
+        decimals++;
+      }
       cleaned += ch;
     } else if (ch === "." && !hasDot) {
       cleaned += ch;
