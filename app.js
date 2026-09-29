@@ -172,6 +172,48 @@ function render() {
   displayText.textContent = text === "" ? "0" : text;
 }
 
+// ---------- Food buttons (SPEC.md section 4) ----------
+
+// The default food list: name and grams of protein. All in one section
+// for now; sections come later.
+const FOODS = [
+  { name: "Alpro yoghurt", grams: 6.3 },
+  { name: "Hemp seed", grams: 3.2 },
+  { name: "Soya latte", grams: 15.0 },
+  { name: "Cashews", grams: 5.1 },
+  { name: "Kidney beans", grams: 8.4 },
+  { name: "Egg", grams: 6.3 },
+  { name: "Pumpkin seeds", grams: 2.7 },
+  { name: "Cheddar", grams: 5.0 },
+  { name: "Hummus", grams: 1.2 },
+];
+
+// Enters a food's grams into the sum, adding "+" first if needed.
+function pressFood(grams) {
+  if (result !== null || showingError) {
+    // After "=", a food starts a new sum.
+    tokens = [];
+    result = null;
+    showingError = false;
+  } else {
+    const typed = takeTypedNumber();
+    if (typed !== null) tokens.push(typed, "+");
+    // If the sum ends in an operator, that operator is used as it is.
+  }
+  input.value = String(grams);
+  render();
+}
+
+const foodsBox = document.getElementById("foods");
+for (const food of FOODS) {
+  const button = document.createElement("button");
+  button.type = "button";
+  button.className = "key food";
+  button.textContent = food.name;
+  button.dataset.grams = food.grams;
+  foodsBox.appendChild(button);
+}
+
 // Buttons must not take focus away from the input, so the phone keypad
 // stays open and desktop typing keeps working after a click.
 document.querySelectorAll(".key").forEach((button) => {
@@ -181,6 +223,7 @@ document.querySelectorAll(".key").forEach((button) => {
     if (button.dataset.op) pressOperator(button.dataset.op);
     else if (button.dataset.action === "equals") pressEquals();
     else if (button.dataset.action === "clear") pressClear();
+    else if (button.dataset.grams) pressFood(Number(button.dataset.grams));
   });
 });
 
