@@ -61,10 +61,10 @@ Primary user: the author, tracking protein on a mostly plant-based diet. Seconda
 ### 4.2 Categories
 - Buttons are grouped into categories by **measurement**: what one press of the button's protein amount refers to.
 - There are four categories, each shown in its own soft pastel colour, in this order:
-  - **Baby pink**: 1 tbsp.
-  - **Mint green**: 1 unit.
-  - **Lilac**: misc.
   - **Pale blue**: 1 serving.
+  - **Mint green**: 1 unit.
+  - **Baby pink**: 1 tbsp.
+  - **Lilac**: misc.
 - Categories have no names on the food buttons themselves; they are distinguished by colour. The side text (section 4.5) has a key explaining what each colour means.
 - Categories are separated by a divider line.
 - The key at the bottom of this document lists the category-to-colour system.
@@ -89,7 +89,7 @@ Primary user: the author, tracking protein on a mostly plant-based diet. Seconda
   6. "if you want the calculator to include your own go-to foods, use my github repo to build your own version of this tool."
 - The word "spreadsheet" links to https://github.com/kimia-builds/protein-calculator/blob/main/protein-sheet.xlsx (the sheet the buttons are built from).
 - The words "github repo" link (in the same aqua as the calculator display) to https://github.com/kimia-builds/protein-calculator.
-- Underneath the welcome text (still at the side on a laptop) is the key: a small swatch of each category colour with its meaning ("1 tbsp", "1 unit", "misc", "1 serving").
+- Underneath the welcome text (still at the side on a laptop) is the key: a small swatch of each category colour with its meaning ("1 serving", "1 unit", "1 tbsp", "misc"), in that order.
 - All text in this block is lower case, and so are the food button names.
 
 ## 5. Default list and persistence
@@ -121,7 +121,7 @@ Primary user: the author, tracking protein on a mostly plant-based diet. Seconda
 
 | Colour | Category |
 |---|---|
-| Baby pink | 1 tbsp |
-| Mint green | 1 unit |
-| Lilac | Miscellaneous |
 | Pale blue | 1 serving |
+| Mint green | 1 unit |
+| Baby pink | 1 tbsp |
+| Lilac | Miscellaneous |

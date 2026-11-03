@@ -11,7 +11,7 @@ This documents every food button, taken from [protein-sheet.xlsx](protein-sheet.
 - **Per 100g**: reference only. It is never used for a button.
 - **Notes**: what one press stands for (from the sheet's per unit / per other column) plus the sheet's own notes.
 
-The colour groups are pink (1 tbsp), mint (1 unit), lilac (misc) and blue (1 serving). See [SPEC.md](SPEC.md) section 4.2.
+The colour groups, in order, are blue (1 serving), mint (1 unit), pink (1 tbsp) and lilac (misc). See [SPEC.md](SPEC.md) section 4.2.
 
 ## Keeping this in sync
 
@@ -19,27 +19,43 @@ When the sheet changes, update **both** this file and `FOOD_CATEGORIES` in `app.
 
 Protein figures are per press, to 1 decimal place, matching the calculator.
 
-## Pink: 1 tbsp
+## Blue: 1 serving
 
 | Button | Protein (g) | Food | Brand / type | Per 100g (reference only) | Notes |
 |---|---|---|---|---|---|
-| yoghurt | 1.0 | yoghurt | alpro no sugars plain | 4.0 | 1g per spoonful |
-| pumpkin seeds | 2.4 | pumpkin seeds | - | 30.0 | 2.4 per spoonful; 8g per spoonful |
-| peanut butter | 8.4 | peanut butter | - | 27.0 | 8.4g per spoonful |
-| protein powder | 6.0 | protein powder | green origins organic blend | 74.0 | 6g per spoonful; 12g per 16g powder or 2 spoonfuls |
-| hemp seeds | 3.2 | hemp seeds | biona organic | 25.0 | 3.2g per spoonful; 10g per spoonful |
+| vivera mince | 11.6 | vegan mince | vivera plant based mince | 21.0 | 11.6g per portion; 220g per packet, we usually split into 4 portions |
+| sardines | 22.0 | sardine | fish4ever in tomato sauce | 19.0 | 22g per tin; we're counting a tin as a serving |
+| biltong | 13.0 | jerkey | ember biltong | 51.8 | 13g per pack |
+| rice | 5.0 | rice | basmati white | 3.5 | 5g per portion; cooked |
+| macaroni | 21.0 | macaroni | rummo high protein 21 maxima | 21.0 | 21g per portion; cooked |
+| noodles | 6.0 | noodles | maggi curry flavour instant | 2.0 | 6g per portion; cooked |
+| tagliatelle | 8.8 | tagliatelle | morrisons | 4.9 | 8.8g per portion; cooked |
+| baked beans | 8.5 | baked beans | ocado tin | 4.0 | 8.5g per serving; 2 servings per tin |
+| kidney beans | 6.6 | kidney beans | ocado tin | 8.3 | 6.6 per serving; 3 servings per tin |
+| cannellini | 3.4 | cannellini beans | ocado tin | 4.3 | 3.4g per serving; 3 servings per tin |
+| caramel ball | 10.0 | protein balls | protein ball co salted caramel | 22.2 | 10g per packet |
 
 ## Mint green: 1 unit
 
 | Button | Protein (g) | Food | Brand / type | Per 100g (reference only) | Notes |
 |---|---|---|---|---|---|
-| linda sausage | 7.0 | sausage | linda mccartney red onion + rosemary | 17.0 | 7.0g per unit |
-| richmond sausage | 3.3 | sausage | richmond | 8.7 | 3.3g per unit |
-| linda burger | 23.8 | burger | linda mccartney quarter pounder | 21.0 | 23.8g per unit |
-| richmond burger | 20.0 | burger | richmond quarter pounder | 18.0 | 20.0g per unit |
-| pastrami slice | 3.0 | pastrami | squeaky bean NYC deli | 30.0 | 3.0g per unit |
-| skiva knäcke | 1.3 | knäckebröd | wasa husman | 10.0 | 1.3g per unit |
+| lnd sausage | 7.0 | sausage | linda mccartney red onion + rosemary | 17.0 | 7.0g per unit |
+| rm sausage | 3.3 | sausage | richmond | 8.7 | 3.3g per unit |
+| lnd burger | 23.8 | burger | linda mccartney quarter pounder | 21.0 | 23.8g per unit |
+| rm burger | 20.0 | burger | richmond quarter pounder | 18.0 | 20.0g per unit |
+| pastrami | 3.0 | pastrami | squeaky bean NYC deli | 30.0 | 3.0g per unit |
+| knäcke | 1.3 | knäckebröd | wasa husman | 10.0 | 1.3g per unit |
 | egg | 6.3 | egg | - | 13.0 | 6.3g per unit; cooked |
+
+## Pink: 1 tbsp
+
+| Button | Protein (g) | Food | Brand / type | Per 100g (reference only) | Notes |
+|---|---|---|---|---|---|
+| yoghurt | 1.0 | yoghurt | alpro no sugars plain | 4.0 | 1g per spoonful |
+| pkn seeds | 2.4 | pumpkin seeds | - | 30.0 | 2.4 per spoonful; 8g per spoonful |
+| spoon pb | 8.4 | peanut butter | - | 27.0 | 8.4g per spoonful |
+| pro-wder | 6.0 | protein powder | green origins organic blend | 74.0 | 6g per spoonful; 12g per 16g powder or 2 spoonfuls |
+| hemp seeds | 3.2 | hemp seeds | biona organic | 25.0 | 3.2g per spoonful; 10g per spoonful |
 
 ## Lilac: misc
 
@@ -50,24 +66,8 @@ Protein figures are per press, to 1 decimal place, matching the calculator.
 | 25g cheddar | 6.0 | cheese | belton farm organic mature cheddar | 23.9 | 6g per 25g cheese |
 | soya latte | 8.1 | soya milk | from a coffee shop like pret | 3.0 | 8.1 per cup of coffee |
 | soya tea | 2.5 | soya milk | alpro high protein | 3.3 | 2.5g per cup of tea |
-| 100g edamame | 13.0 | edamame beans | ocado frozen | 13.0 | 13g per 100g edamame |
+| edamame | 13.0 | edamame beans | ocado frozen | 13.0 | 13g per 100g edamame |
 | smoothie | 42.5 | berry smoothie | home-made peanut butter berry | - | 42.5g per smoothie |
-
-## Blue: 1 serving
-
-| Button | Protein (g) | Food | Brand / type | Per 100g (reference only) | Notes |
-|---|---|---|---|---|---|
-| vivera mince | 11.6 | vegan mince | vivera plant based mince | 21.0 | 11.6g per portion; 220g per packet, we usually split into 4 portions |
-| tin of sardines | 22.0 | sardine | fish4ever in tomato sauce | 19.0 | 22g per tin; we're counting a tin as a serving |
-| biltong packet | 13.0 | jerkey | ember biltong | 51.8 | 13g per pack |
-| rice portion | 5.0 | rice | basmati white | 3.5 | 5g per portion; cooked |
-| macaroni | 21.0 | macaroni | rummo high protein 21 maxima | 21.0 | 21g per portion; cooked |
-| instant noodles | 6.0 | noodles | maggi curry flavour instant | 2.0 | 6g per portion; cooked |
-| tagliatelle | 8.8 | tagliatelle | morrisons | 4.9 | 8.8g per portion; cooked |
-| baked beans | 8.5 | baked beans | ocado tin | 4.0 | 8.5g per serving; 2 servings per tin |
-| kidney beans | 6.6 | kidney beans | ocado tin | 8.3 | 6.6 per serving; 3 servings per tin |
-| cannellini beans | 3.4 | cannellini beans | ocado tin | 4.3 | 3.4g per serving; 3 servings per tin |
-| caramel ball | 10.0 | protein balls | protein ball co salted caramel | 22.2 | 10g per packet |
 
 ## Left out of the buttons
 

@@ -184,7 +184,7 @@ test.describe("4.1 food buttons", () => {
   test("if the last entry is an operator, that operator is used", async () => {
     await c.food("egg").click();
     await c.key("multiply").click();
-    await c.food("richmond burger").click();
+    await c.food("rm burger").click();
     expect(await shown(c)).toBe("6.3 × 20");
   });
   test("typed number then a food adds with +", async () => {
@@ -196,7 +196,7 @@ test.describe("4.1 food buttons", () => {
     await c.food("egg").click();
     await c.food("egg").click();
     await c.key("=").click();
-    await c.food("richmond burger").click();
+    await c.food("rm burger").click();
     expect(await shown(c)).toBe("20");
   });
   test("clicking buttons keeps the keyboard input focused", async ({ page }) => {
@@ -206,15 +206,15 @@ test.describe("4.1 food buttons", () => {
 });
 
 test.describe("4.2 categories and 5 default list", () => {
-  test("four groups: pink, mint, lilac, blue, in that order", async ({ page }) => {
+  test("four groups: blue, mint, pink, lilac, in that order", async ({ page }) => {
     const classes = await page.locator(".food-group").evaluateAll((els) =>
       els.map((e) => e.className)
     );
     expect(classes).toEqual([
-      "food-group food-pink",
-      "food-group food-mint",
-      "food-group food-lilac",
       "food-group food-blue",
+      "food-group food-mint",
+      "food-group food-pink",
+      "food-group food-lilac",
     ]);
   });
   test("every food has a name and a positive protein amount", async ({ page }) => {
@@ -270,10 +270,10 @@ test.describe("4.5 welcome text and key", () => {
   });
   test("key lists the four meanings", async ({ page }) => {
     await expect(page.locator(".legend li")).toHaveText([
-      "1 tbsp",
-      "1 unit",
-      "misc",
       "1 serving",
+      "1 unit",
+      "1 tbsp",
+      "misc",
     ]);
   });
   test("all text in the block is lower case", async ({ page }) => {

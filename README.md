@@ -10,7 +10,7 @@ The author follows a mostly plant-based diet where reaching a protein target is 
 
 - A basic calculator (+, −, ×, ÷, =, AC). Numbers are typed; there are no number buttons.
 - Food buttons sit below the calculator. Tapping one enters that food's protein grams into the calculator.
-- The food list is hard-coded in the source. Foods are grouped into colour-coded categories by measurement: baby pink is 1 tbsp, mint green is 1 unit, lilac is misc, and pale blue is 1 serving.
+- The food list is hard-coded in the source. Foods are grouped into colour-coded categories by measurement: in order: pale blue is 1 serving, mint green is 1 unit, baby pink is 1 tbsp, and lilac is misc.
 - The buttons are built from [protein-sheet.xlsx](protein-sheet.xlsx). Every food's protein figure, brand and assumptions are documented in [FOODS.md](FOODS.md).
 
 ## Status

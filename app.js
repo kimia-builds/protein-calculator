@@ -174,30 +174,46 @@ function render() {
 
 // ---------- Food buttons (SPEC.md section 4) ----------
 
-// The default food list: four categories by measurement (SPEC.md 4.2).
+// The default food list: four categories by measurement, in the order serving, unit, tbsp, misc (SPEC.md 4.2).
 // It comes from protein-sheet.xlsx (documented in FOODS.md).
 // Each food has a name and grams of protein per press.
 const FOOD_CATEGORIES = [
   {
-    colour: "pink", // 1 tbsp
+    colour: "blue", // 1 serving
     foods: [
-      { name: "yoghurt", grams: 1.0 },
-      { name: "pumpkin seeds", grams: 2.4 },
-      { name: "peanut butter", grams: 8.4 },
-      { name: "protein powder", grams: 6.0 },
-      { name: "hemp seeds", grams: 3.2 },
+      { name: "vivera mince", grams: 11.6 },
+      { name: "sardines", grams: 22.0 },
+      { name: "biltong", grams: 13.0 },
+      { name: "rice", grams: 5.0 },
+      { name: "macaroni", grams: 21.0 },
+      { name: "noodles", grams: 6.0 },
+      { name: "tagliatelle", grams: 8.8 },
+      { name: "baked beans", grams: 8.5 },
+      { name: "kidney beans", grams: 6.6 },
+      { name: "cannellini", grams: 3.4 },
+      { name: "caramel ball", grams: 10.0 },
     ],
   },
   {
     colour: "mint", // 1 unit
     foods: [
-      { name: "linda sausage", grams: 7.0 },
-      { name: "richmond sausage", grams: 3.3 },
-      { name: "linda burger", grams: 23.8 },
-      { name: "richmond burger", grams: 20.0 },
-      { name: "pastrami slice", grams: 3.0 },
-      { name: "skiva knäcke", grams: 1.3 },
+      { name: "lnd sausage", grams: 7.0 },
+      { name: "rm sausage", grams: 3.3 },
+      { name: "lnd burger", grams: 23.8 },
+      { name: "rm burger", grams: 20.0 },
+      { name: "pastrami", grams: 3.0 },
+      { name: "knäcke", grams: 1.3 },
       { name: "egg", grams: 6.3 },
+    ],
+  },
+  {
+    colour: "pink", // 1 tbsp
+    foods: [
+      { name: "yoghurt", grams: 1.0 },
+      { name: "pkn seeds", grams: 2.4 },
+      { name: "spoon pb", grams: 8.4 },
+      { name: "pro-wder", grams: 6.0 },
+      { name: "hemp seeds", grams: 3.2 },
     ],
   },
   {
@@ -208,24 +224,8 @@ const FOOD_CATEGORIES = [
       { name: "25g cheddar", grams: 6.0 },
       { name: "soya latte", grams: 8.1 },
       { name: "soya tea", grams: 2.5 },
-      { name: "100g edamame", grams: 13.0 },
+      { name: "edamame", grams: 13.0 },
       { name: "smoothie", grams: 42.5 },
-    ],
-  },
-  {
-    colour: "blue", // 1 serving
-    foods: [
-      { name: "vivera mince", grams: 11.6 },
-      { name: "tin of sardines", grams: 22.0 },
-      { name: "biltong packet", grams: 13.0 },
-      { name: "rice portion", grams: 5.0 },
-      { name: "macaroni", grams: 21.0 },
-      { name: "instant noodles", grams: 6.0 },
-      { name: "tagliatelle", grams: 8.8 },
-      { name: "baked beans", grams: 8.5 },
-      { name: "kidney beans", grams: 6.6 },
-      { name: "cannellini beans", grams: 3.4 },
-      { name: "caramel ball", grams: 10.0 },
     ],
   },
 ];
