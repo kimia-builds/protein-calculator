@@ -117,7 +117,7 @@ test("phone: welcome text and key sit BELOW the calculator", async ({ page }) =>
   expect(about.y).toBeGreaterThanOrEqual(calc.y + calc.height - 1);
 });
 
-test("the three colour groups are stacked in order with dividers", async ({ page }) => {
+test("the four colour groups are stacked in order with dividers", async ({ page }) => {
   await page.setViewportSize(SIZES.phone);
   await openCalc(page);
   const groups = await page.locator(".food-group").evaluateAll((els) =>

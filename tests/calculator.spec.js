@@ -176,16 +176,16 @@ test.describe("4.1 food buttons", () => {
   });
   test("a second food adds with + automatically", async () => {
     await c.food("egg").click();
-    await c.food("cheese").click();
-    expect(await shown(c)).toBe("6.3 + 5");
+    await c.food("25g cheddar").click();
+    expect(await shown(c)).toBe("6.3 + 6");
     await c.key("=").click();
-    expect(await shown(c)).toBe("11.3");
+    expect(await shown(c)).toBe("12.3");
   });
   test("if the last entry is an operator, that operator is used", async () => {
     await c.food("egg").click();
     await c.key("multiply").click();
-    await c.food("burger").click();
-    expect(await shown(c)).toBe("6.3 × 12");
+    await c.food("richmond burger").click();
+    expect(await shown(c)).toBe("6.3 × 20");
   });
   test("typed number then a food adds with +", async () => {
     await c.type("2");
@@ -196,8 +196,8 @@ test.describe("4.1 food buttons", () => {
     await c.food("egg").click();
     await c.food("egg").click();
     await c.key("=").click();
-    await c.food("burger").click();
-    expect(await shown(c)).toBe("12");
+    await c.food("richmond burger").click();
+    expect(await shown(c)).toBe("20");
   });
   test("clicking buttons keeps the keyboard input focused", async ({ page }) => {
     await c.food("egg").click();
@@ -206,7 +206,7 @@ test.describe("4.1 food buttons", () => {
 });
 
 test.describe("4.2 categories and 5 default list", () => {
-  test("three groups: pink, mint, lilac, in that order", async ({ page }) => {
+  test("four groups: pink, mint, lilac, blue, in that order", async ({ page }) => {
     const classes = await page.locator(".food-group").evaluateAll((els) =>
       els.map((e) => e.className)
     );
@@ -214,6 +214,7 @@ test.describe("4.2 categories and 5 default list", () => {
       "food-group food-pink",
       "food-group food-mint",
       "food-group food-lilac",
+      "food-group food-blue",
     ]);
   });
   test("every food has a name and a positive protein amount", async ({ page }) => {
@@ -232,7 +233,7 @@ test.describe("4.2 categories and 5 default list", () => {
   });
   test("food buttons show no category names", async ({ page }) => {
     const text = (await page.locator(".foods").textContent()).toLowerCase();
-    for (const word of ["tablespoon", "unit", "miscellaneous"]) {
+    for (const word of ["tablespoon", "unit", "miscellaneous", "serving"]) {
       expect(text).not.toContain(word);
     }
   });
@@ -258,11 +259,12 @@ test.describe("4.5 welcome text and key", () => {
     const names = await page.locator(".food").allTextContents();
     for (const n of names) expect(n).toBe(n.toLowerCase());
   });
-  test("key lists the three meanings", async ({ page }) => {
+  test("key lists the four meanings", async ({ page }) => {
     await expect(page.locator(".legend li")).toHaveText([
       "1 tbsp",
       "1 unit",
       "misc",
+      "1 serving",
     ]);
   });
   test("all text in the block is lower case", async ({ page }) => {
@@ -274,6 +276,7 @@ test.describe("4.5 welcome text and key", () => {
     expect(await bg(".swatch-pink")).toBe(await bg(".food-pink .food"));
     expect(await bg(".swatch-mint")).toBe(await bg(".food-mint .food"));
     expect(await bg(".swatch-lilac")).toBe(await bg(".food-lilac .food"));
+    expect(await bg(".swatch-blue")).toBe(await bg(".food-blue .food"));
   });
 });
 

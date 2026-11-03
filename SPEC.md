@@ -2,7 +2,7 @@
 
 ## 0. Status
 
-**MVP achieved.** The MVP is the calculator (section 3) plus a hard-coded list of food buttons (section 4.1), grouped into the three colour-coded categories in 4.2. It works on desktop and phone.
+**MVP achieved.** The MVP is the calculator (section 3) plus a hard-coded list of food buttons (section 4.1), grouped into the four colour-coded categories in 4.2. It works on desktop and phone.
 
 Everything marked *Nice to have* below is optional and may never be built.
 
@@ -60,10 +60,11 @@ Primary user: the author, tracking protein on a mostly plant-based diet. Seconda
 
 ### 4.2 Categories
 - Buttons are grouped into categories by **measurement**: what one press of the button's protein amount refers to.
-- There are three categories, each shown in its own soft pastel colour:
+- There are four categories, each shown in its own soft pastel colour, in this order:
   - **Baby pink**: 1 tbsp.
   - **Mint green**: 1 unit.
   - **Lilac**: misc.
+  - **Pale blue**: 1 serving.
 - Categories have no names on the food buttons themselves; they are distinguished by colour. The side text (section 4.5) has a key explaining what each colour means.
 - Categories are separated by a divider line.
 - The key at the bottom of this document lists the category-to-colour system.
@@ -85,12 +86,12 @@ Primary user: the author, tracking protein on a mostly plant-based diet. Seconda
   3. "this regular calculator works to 1 decimal point and follows bidmas rules. just type the numbers you need with a regular keyboard."
   4. "note: these foods correspond to exact protein values of specific (mostly vegan) brands of food that kimia eats. if you want it to include your go-to foods, use my github repo to build your own version."
 - The words "github repo" link (in the same aqua as the calculator display) to https://github.com/kimia-builds/protein-calculator.
-- Underneath the welcome text (still at the side on a laptop) is the key: a small swatch of each category colour with its meaning ("1 tbsp", "1 unit", "misc").
+- Underneath the welcome text (still at the side on a laptop) is the key: a small swatch of each category colour with its meaning ("1 tbsp", "1 unit", "misc", "1 serving").
 - All text in this block is lower case, and so are the food button names.
 
 ## 5. Default list and persistence
 
-- The default food list (names, protein amounts, categories) is hard-coded in the source. It is the source of truth for what the buttons do. [FOODS.md](FOODS.md) documents what each figure means (exact food, amount, brand, assumptions) and must be kept in step with it; a test checks the names and grams match.
+- The default food list (names, protein amounts, categories) is hard-coded in the source. It is the source of truth for what the buttons do. It is built from [protein-sheet.xlsx](protein-sheet.xlsx): each button is named after the sheet's "calculator button" column and uses the sheet's per unit / per serving / per other amount (never the per 100g figure, which is reference only). Rows shaded pink in the sheet get no button. [FOODS.md](FOODS.md) documents the sheet row by row and must be kept in step with the source; a test checks the names and grams match.
 - Changes to the default list are made in the source code, not through the page.
 - *Nice to have* (only needed if 4.3 or 4.4 is built): user customisations (created and deleted buttons) are stored in the browser (`localStorage`) on that device. They do not sync across devices.
 
@@ -111,7 +112,7 @@ Primary user: the author, tracking protein on a mostly plant-based diet. Seconda
 
 ## 8. Open items
 
-- More foods to add to the default list (e.g. Linda sausage), once the author supplies their protein amounts.
+- Sheet rows shaded pink (cashews, pistachios, peanuts, hummus, protein balls, oats) have no button yet; they need an amount per unit, serving or other.
 
 ## Key: categories and colours
 
@@ -120,3 +121,4 @@ Primary user: the author, tracking protein on a mostly plant-based diet. Seconda
 | Baby pink | 1 tbsp |
 | Mint green | 1 unit |
 | Lilac | Miscellaneous |
+| Pale blue | 1 serving |

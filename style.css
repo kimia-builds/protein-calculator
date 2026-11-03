@@ -160,6 +160,11 @@ body {
   --key-shadow: #a99bc9;
 }
 
+.food-blue .food {
+  --key: #cfe0f5;
+  --key-shadow: #8fa9c9;
+}
+
 .key-clear:active {
   box-shadow:
     inset 0 2px 0 rgba(255, 255, 255, 0.25),
@@ -258,6 +263,7 @@ body {
 .swatch-pink { background: #f6cfda; }
 .swatch-mint { background: #cfe8d6; }
 .swatch-lilac { background: #ddd2f2; }
+.swatch-blue { background: #cfe0f5; }
 
 @media (min-width: 900px) {
   body {

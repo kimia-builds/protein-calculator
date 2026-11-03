@@ -174,43 +174,58 @@ function render() {
 
 // ---------- Food buttons (SPEC.md section 4) ----------
 
-// The default food list: three categories by measurement (SPEC.md 4.2).
+// The default food list: four categories by measurement (SPEC.md 4.2).
+// It comes from protein-sheet.xlsx (documented in FOODS.md).
 // Each food has a name and grams of protein per press.
 const FOOD_CATEGORIES = [
   {
     colour: "pink", // 1 tbsp
     foods: [
-      { name: "yoghurt", grams: 0.6 },
-      { name: "hemp seed", grams: 3.2 },
-      { name: "cashews", grams: 1.6 },
-      { name: "almonds", grams: 1.8 },
-      { name: "pistachios", grams: 1.0 },
-      { name: "pumpkin seeds", grams: 2.7 },
-      { name: "hummus", grams: 1.2 },
+      { name: "yoghurt", grams: 1.0 },
+      { name: "pumpkin seeds", grams: 2.4 },
+      { name: "peanut butter", grams: 8.4 },
+      { name: "protein powder", grams: 6.0 },
+      { name: "hemp seeds", grams: 3.2 },
     ],
   },
   {
     colour: "mint", // 1 unit
     foods: [
-      { name: "pastrami", grams: 1.5 },
-      { name: "pepperoni", grams: 0.8 },
-      { name: "sausage", grams: 5.0 },
-      { name: "burger", grams: 12.0 },
-      { name: "mackerel", grams: 17.0 },
-      { name: "sardines", grams: 17.0 },
+      { name: "linda sausage", grams: 7.0 },
+      { name: "richmond sausage", grams: 3.3 },
+      { name: "linda burger", grams: 23.8 },
+      { name: "richmond burger", grams: 20.0 },
+      { name: "pastrami slice", grams: 3.0 },
+      { name: "skiva knäcke", grams: 1.3 },
       { name: "egg", grams: 6.3 },
-      { name: "cheese", grams: 5.0 },
     ],
   },
   {
     colour: "lilac", // misc
     foods: [
-      { name: "soya latte", grams: 15.0 },
-      { name: "half-tin beans", grams: 8.4 },
-      { name: "jerky pack", grams: 8.0 },
-      { name: "ryvita slice", grams: 0.9 },
-      { name: "bowl tagliatelle", grams: 9.0 },
-      { name: "bowl rice", grams: 4.0 },
+      { name: "4 pepperoni", grams: 1.8 },
+      { name: "brown thins", grams: 4.0 },
+      { name: "25g cheddar", grams: 6.0 },
+      { name: "soya latte", grams: 8.1 },
+      { name: "soya tea", grams: 2.5 },
+      { name: "100g edamame", grams: 13.0 },
+      { name: "smoothie", grams: 42.5 },
+    ],
+  },
+  {
+    colour: "blue", // 1 serving
+    foods: [
+      { name: "vivera mince", grams: 11.6 },
+      { name: "tin of sardines", grams: 22.0 },
+      { name: "biltong packet", grams: 13.0 },
+      { name: "rice portion", grams: 5.0 },
+      { name: "macaroni", grams: 21.0 },
+      { name: "instant noodles", grams: 6.0 },
+      { name: "tagliatelle", grams: 8.8 },
+      { name: "baked beans", grams: 8.5 },
+      { name: "kidney beans", grams: 6.6 },
+      { name: "cannellini beans", grams: 3.4 },
+      { name: "caramel ball", grams: 10.0 },
     ],
   },
 ];
