@@ -243,16 +243,25 @@ test.describe("4.5 welcome text and key", () => {
   test("welcome text is present and exact", async ({ page }) => {
     await expect(page.locator(".welcome p")).toHaveText([
       "welcome to kimia's protein calculator.",
-      "calculate your daily protein intake as you go. ate 3 eggs? press egg, then ×, then type 3, or just click the egg three times.",
+      "calculate your daily protein intake as you go.",
+      "ate 3 eggs? press egg, then ×, then type 3, or just click the egg three times.",
       "this regular calculator works to 1 decimal point and follows bidmas rules. just type the numbers you need with a regular keyboard.",
-      "note: these foods correspond to exact protein values of specific (mostly vegan) brands of food that kimia eats. if you want it to include your go-to foods, use my github repo to build your own version.",
+      "note: these foods correspond to exact protein values of specific (mostly vegan) brands of food that kimia eats. for more information about them, check this spreadsheet.",
+      "if you want the calculator to include your own go-to foods, use my github repo to build your own version of this tool.",
     ]);
   });
   test("\"github repo\" links to the repository", async ({ page }) => {
-    await expect(page.locator(".welcome a")).toHaveText("github repo");
-    await expect(page.locator(".welcome a")).toHaveAttribute(
+    const link = page.locator(".welcome a", { hasText: "github repo" });
+    await expect(link).toHaveAttribute(
       "href",
       "https://github.com/kimia-builds/protein-calculator"
+    );
+  });
+  test("\"spreadsheet\" links to the protein sheet", async ({ page }) => {
+    const link = page.locator(".welcome a", { hasText: "spreadsheet" });
+    await expect(link).toHaveAttribute(
+      "href",
+      "https://github.com/kimia-builds/protein-calculator/blob/main/protein-sheet.xlsx"
     );
   });
   test("food buttons are all lower case", async ({ page }) => {

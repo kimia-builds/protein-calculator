@@ -80,11 +80,14 @@ Primary user: the author, tracking protein on a mostly plant-based diet. Seconda
 
 ### 4.5 Welcome text and key
 - A block of text sits beside the calculator: to its left on a laptop, below it on a phone.
-- It reads, as four paragraphs:
+- It reads, as six paragraphs:
   1. "welcome to kimia's protein calculator."
-  2. "calculate your daily protein intake as you go. ate 3 eggs? press [egg], then [×], then type [3], or just click the [egg] three times." Each [bracket] is a small picture, not a real button: [egg] copies the mint egg food button, [×] copies the multiply key, and [3] is a dark computer-keyboard key, deliberately unlike the other buttons because the calculator has no number buttons (numbers are typed).
-  3. "this regular calculator works to 1 decimal point and follows bidmas rules. just type the numbers you need with a regular keyboard."
-  4. "note: these foods correspond to exact protein values of specific (mostly vegan) brands of food that kimia eats. if you want it to include your go-to foods, use my github repo to build your own version."
+  2. "calculate your daily protein intake as you go."
+  3. "ate 3 eggs? press [egg], then [×], then type [3], or just click the [egg] three times." Each [bracket] is a small picture, not a real button: [egg] copies the mint egg food button, [×] copies the multiply key, and [3] is a dark computer-keyboard key, deliberately unlike the other buttons because the calculator has no number buttons (numbers are typed).
+  4. "this regular calculator works to 1 decimal point and follows bidmas rules. just type the numbers you need with a regular keyboard."
+  5. "note: these foods correspond to exact protein values of specific (mostly vegan) brands of food that kimia eats. for more information about them, check this spreadsheet."
+  6. "if you want the calculator to include your own go-to foods, use my github repo to build your own version of this tool."
+- The word "spreadsheet" links to https://github.com/kimia-builds/protein-calculator/blob/main/protein-sheet.xlsx (the sheet the buttons are built from).
 - The words "github repo" link (in the same aqua as the calculator display) to https://github.com/kimia-builds/protein-calculator.
 - Underneath the welcome text (still at the side on a laptop) is the key: a small swatch of each category colour with its meaning ("1 tbsp", "1 unit", "misc", "1 serving").
 - All text in this block is lower case, and so are the food button names.
