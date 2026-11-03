@@ -160,3 +160,13 @@ test("no errors in the browser console", async ({ page }) => {
   await openCalc(page);
   expect(problems).toEqual([]);
 });
+
+test("the welcome text is justified", async ({ page }) => {
+  await page.setViewportSize(SIZES.laptop);
+  await openCalc(page);
+  const align = await page
+    .locator(".welcome p")
+    .first()
+    .evaluate((el) => getComputedStyle(el).textAlign);
+  expect(align).toBe("justify");
+});

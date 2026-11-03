@@ -245,22 +245,14 @@ test.describe("4.5 welcome text and key", () => {
       "calculate your protein intake as you go!",
       "ate 3 eggs? press egg, then ×, then type 3, or just click the egg three times.",
       "this regular calculator works to 1 decimal point and follows bidmas rules. just type the numbers you need with a regular keyboard.",
-      "note: these foods correspond to exact protein values of specific (mostly vegan) brands of food that kimia eats. for more info, check the spreadsheet.",
-      "see also: the github repo",
+      "note: these foods correspond to exact protein values of specific (mostly vegan) brands of food that kimia eats. more info",
     ]);
   });
-  test("\"github repo\" links to the repository", async ({ page }) => {
-    const link = page.locator(".welcome a", { hasText: "github repo" });
+  test("\"more info\" links to the foods page", async ({ page }) => {
+    const link = page.locator(".welcome a", { hasText: "more info" });
     await expect(link).toHaveAttribute(
       "href",
-      "https://github.com/kimia-builds/protein-calculator"
-    );
-  });
-  test("\"spreadsheet\" links to the protein sheet", async ({ page }) => {
-    const link = page.locator(".welcome a", { hasText: "spreadsheet" });
-    await expect(link).toHaveAttribute(
-      "href",
-      "https://github.com/kimia-builds/protein-calculator/blob/main/protein-sheet.xlsx"
+      "https://github.com/kimia-builds/protein-calculator/blob/main/FOODS.md"
     );
   });
   test("food buttons are all lower case", async ({ page }) => {
