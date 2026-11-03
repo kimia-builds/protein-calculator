@@ -181,51 +181,51 @@ const FOOD_CATEGORIES = [
   {
     colour: "blue", // 1 serving
     foods: [
-      { name: "vivera mince", grams: 11.6 },
-      { name: "sardines", grams: 22.0 },
-      { name: "biltong", grams: 13.0 },
       { name: "rice", grams: 5.0 },
       { name: "macaroni", grams: 21.0 },
       { name: "noodles", grams: 6.0 },
       { name: "tagliatelle", grams: 8.8 },
+      { name: "vivera mince", grams: 11.6 },
+      { name: "sardines", grams: 22.0 },
       { name: "baked beans", grams: 8.5 },
       { name: "kidney beans", grams: 6.6 },
       { name: "cannellini", grams: 3.4 },
+      { name: "biltong", grams: 13.0 },
       { name: "caramel ball", grams: 10.0 },
     ],
   },
   {
     colour: "mint", // 1 unit
     foods: [
-      { name: "lnd sausage", grams: 7.0 },
-      { name: "rm sausage", grams: 3.3 },
-      { name: "lnd burger", grams: 23.8 },
-      { name: "rm burger", grams: 20.0 },
-      { name: "pastrami", grams: 3.0 },
       { name: "knäcke", grams: 1.3 },
       { name: "egg", grams: 6.3 },
+      { name: "lnd sausage", grams: 7.0 },
+      { name: "rm burger", grams: 20.0 },
+      { name: "rm sausage", grams: 3.3 },
+      { name: "lnd burger", grams: 23.8 },
+      { name: "pastrami", grams: 3.0 },
     ],
   },
   {
     colour: "pink", // 1 tbsp
     foods: [
-      { name: "yoghurt", grams: 1.0 },
       { name: "pkn seeds", grams: 2.4 },
-      { name: "spoon pb", grams: 8.4 },
-      { name: "pro-wder", grams: 6.0 },
       { name: "hemp seeds", grams: 3.2 },
+      { name: "pro-wder", grams: 6.0 },
+      { name: "yoghurt", grams: 1.0 },
+      { name: "spoon pb", grams: 8.4 },
     ],
   },
   {
     colour: "lilac", // misc
     foods: [
-      { name: "4 pepperoni", grams: 1.8 },
       { name: "brown thins", grams: 4.0 },
+      { name: "4 pepperoni", grams: 1.8 },
       { name: "25g cheddar", grams: 6.0 },
+      { name: "smoothie", grams: 42.5 },
+      { name: "edamame", grams: 13.0 },
       { name: "soya latte", grams: 8.1 },
       { name: "soya tea", grams: 2.5 },
-      { name: "edamame", grams: 13.0 },
-      { name: "smoothie", grams: 42.5 },
     ],
   },
 ];
