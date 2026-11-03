@@ -189,6 +189,48 @@ body {
   margin-bottom: 0;
 }
 
+/* Little pictures of buttons inside the text. They copy the real keys
+   (mint food key, pale grey operator key). The typed 3 is deliberately a
+   dark computer-keyboard key, since the calculator has no number buttons. */
+.mini-key {
+  display: inline-block;
+  min-width: 2.2em;
+  margin: 0 0 0 3px;
+  padding: 0.25em 0.6em;
+  border-radius: 6px;
+  background: var(--key);
+  color: var(--key-text);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.7),
+    0 3px 0 var(--key-shadow);
+  line-height: 1.2;
+  text-align: center;
+  vertical-align: baseline;
+}
+
+.mini-egg {
+  --key: #cfe8d6;
+  --key-shadow: #8fb39a;
+}
+
+.mini-times {
+  font-size: 1.5em;
+  line-height: 1;
+}
+
+.mini-typed {
+  min-width: 2.4em;
+  border: 1px solid #6b6b70;
+  border-radius: 4px;
+  background: #1d1d1f;
+  color: #f1f1ee;
+  font-family: "SF Mono", Menlo, Consolas, "Courier New", monospace;
+  font-weight: 600;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.25),
+    0 3px 0 #0b0b0c;
+}
+
 .welcome a {
   color: var(--glow);
 }
