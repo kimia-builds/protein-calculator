@@ -188,6 +188,7 @@ body {
 
 .welcome p {
   margin: 0 0 1em;
+  text-align: justify;
 }
 
 .welcome p:last-child {
@@ -301,7 +302,9 @@ body {
   .foods-extra {
     grid-column: 2;
     grid-row: 1 / span 3;
-    margin-top: 0;
+    /* Starts level with the top of the welcome text, a little below the
+       top of the display. */
+    margin-top: 13px;
     align-self: start;
   }
 
