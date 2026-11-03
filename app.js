@@ -246,7 +246,10 @@ function pressFood(grams) {
   render();
 }
 
+// Blue (1 serving) stays under the keys; the other colours go in a second
+// box, which a wide screen moves into columns to the right.
 const foodsBox = document.getElementById("foods");
+const foodsExtraBox = document.getElementById("foods-extra");
 for (const category of FOOD_CATEGORIES) {
   const section = document.createElement("div");
   section.className = "food-group food-" + category.colour;
@@ -258,7 +261,7 @@ for (const category of FOOD_CATEGORIES) {
     button.dataset.grams = food.grams;
     section.appendChild(button);
   }
-  foodsBox.appendChild(section);
+  (category.colour === "blue" ? foodsBox : foodsExtraBox).appendChild(section);
 }
 
 // Buttons must not take focus away from the input, so the phone keypad

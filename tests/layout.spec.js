@@ -7,6 +7,7 @@ const SIZES = {
   phone: { width: 390, height: 844 },
   tablet: { width: 768, height: 1024 },
   laptop: { width: 1280, height: 800 },
+  "wide screen": { width: 1920, height: 1080 },
 };
 
 const box = (loc) => loc.first().boundingBox();
@@ -107,6 +108,18 @@ test("laptop: welcome text and key sit to the LEFT of the calculator", async ({ 
   const about = await box(page.locator(".about"));
   const calc = await box(page.locator(".calculator"));
   expect(about.x + about.width).toBeLessThanOrEqual(calc.x + 1);
+});
+
+test("wide screen: green, pink and purple buttons sit in columns to the right of the blue ones", async ({ page }) => {
+  await page.setViewportSize(SIZES["wide screen"]);
+  await openCalc(page);
+  const x = async (sel) => (await box(page.locator(sel))).x;
+  const blue = await x(".food-blue .food");
+  for (const colour of ["mint", "pink", "lilac"]) {
+    expect(await x(`.food-${colour} .food`)).toBeGreaterThan(blue + 300);
+  }
+  const about = await box(page.locator(".about"));
+  expect(about.x + about.width).toBeLessThanOrEqual(blue);
 });
 
 test("phone: welcome text and key sit BELOW the calculator", async ({ page }) => {

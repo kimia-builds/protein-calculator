@@ -232,7 +232,7 @@ test.describe("4.2 categories and 5 default list", () => {
     expect(new Set(names).size).toBe(names.length);
   });
   test("food buttons show no category names", async ({ page }) => {
-    const text = (await page.locator(".foods").textContent()).toLowerCase();
+    const text = (await page.locator(".foods").allTextContents()).join(" ").toLowerCase();
     for (const word of ["tablespoon", "unit", "miscellaneous", "serving"]) {
       expect(text).not.toContain(word);
     }

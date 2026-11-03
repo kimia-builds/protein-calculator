@@ -67,6 +67,7 @@ Primary user: the author, tracking protein on a mostly plant-based diet. Seconda
   - **Lilac**: misc.
 - Categories have no names on the food buttons themselves; they are distinguished by colour. The side text (section 4.5) has a key explaining what each colour means.
 - Categories are separated by a divider line.
+- On a wide screen (about 1200px and up) the welcome text stays in its own column on the left, the calculator and the blue buttons sit in the middle, and the green, pink and lilac buttons move into a column on the right. It never goes beyond these three columns, however wide the screen. On a laptop-sized or smaller screen they stack under the calculator as before.
 - The key at the bottom of this document lists the category-to-colour system.
 
 ### 4.3 Creating (*Nice to have*)
